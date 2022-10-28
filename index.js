@@ -10,59 +10,80 @@ const distPath = path.join(DIST_DIR, 'team.html');
 
 const render = require('./src/page-template.js');
 
-
-// function for creating manager - inquirer questions
-  // take those questions and create a new Manager with the user provided answers
-  
-
-  // follow the same pattern for each type of employee
-  // build a function for them that uses inquirer
 const teamMembers = [];
 
 // manager questions
+inquirer
+  .prompt([
+  {
+  type: "input",
+  message: "What is your name?",
+  name: "empName",
+  },
+  {
+  type: "input",
+  message: "What is your employee ID number?.",
+  name: "id",
+  },
+  {
+  type: "input",
+  message: "What is your email?",
+  name: "email",
+  },
+  {
+  type: "input",
+  message: "What is your office number?",
+  name: "office",
+  }
 
-// push that new Manager to the team members array
+  ])
+  .then((answers) => {
+    const manager = new Manager(
+      answers.empName,
+      answers.id,
+      answers.email,
+      answers.office
+    );
+  }
 
-const newManager = () => {
-    const questions = [ {
-        type: "input",
-        message: "What is your name?",
-        name: "empName",
-      },
-      {
-        type: "input",
-        message: "What is your employee ID number?.",
-        name: "id",
-      },
-      {
-        type: "input",
-        message: "What is your email?",
-        name: "email",
-      },
-      {
-        type: "input",
-        message: "What is your office number?",
-        name: "office",
-      },
-    
-    ];
-    inquirer
-      .prompt(questions)
-      .then((answers) => teamMembers.push(newManager));
-  };
+// push new Manager to the team members array
+// teamMembers.push(manager);
 
 // at the end of manager function, call a createTeam function
 // this function would simply ask the user which type of employee they would like to add, based on their choice, run the corresponding function
-const createTeam = () => {
+// const createTeam = () => {
+//   inquirer
+//     .prompt(
+//       {
+//         type: "list",
+//         message: "Please select the position of the employee you want to add to your team.",
+//         name: "newTeamMember",
+//         choices: ["engineer", "intern", "finished building team"],
+//       }
+//     )
+//     .then((answer) => {
+//       switch (answer) {
+//         case "engineer":
+          
+//           break;
+      
+//         case "intern":
 
-};
+//           break;
+        
+//           case "finished building team":
+          
+//             break;
+//       }
+//     });
+  
 
 
+// };
+// createTeam();
 
-// {
-//     type: "list",
-//     message: "Please select the position for the employee you want to add to your team.",
-//     name: "newTeamMember",
-//     choices: ["Engineer", "Intern", "finished building team"],
-//   },
-// at the end, use fs to write file while sending the team array over to the function you brought in from page-template.js
+// follow the same pattern for each type of employee
+// build a function for them that uses inquirer
+
+
+  )

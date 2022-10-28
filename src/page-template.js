@@ -26,4 +26,5 @@ const generateTeam = team => {
 
 module.exports = team => {
     // template literal - html body that calls the generate team function
+    
 }
