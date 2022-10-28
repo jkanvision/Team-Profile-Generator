@@ -15,26 +15,26 @@ const teamMembers = [];
 // manager questions
 inquirer
   .prompt([
-  {
-  type: "input",
-  message: "What is your name?",
-  name: "empName",
-  },
-  {
-  type: "input",
-  message: "What is your employee ID number?.",
-  name: "id",
-  },
-  {
-  type: "input",
-  message: "What is your email?",
-  name: "email",
-  },
-  {
-  type: "input",
-  message: "What is your office number?",
-  name: "office",
-  }
+    {
+      type: "input",
+      message: "What is your name?",
+      name: "empName",
+    },
+    {
+      type: "input",
+      message: "What is your employee ID number?.",
+      name: "id",
+    },
+    {
+      type: "input",
+      message: "What is your email?",
+      name: "email",
+    },
+    {
+      type: "input",
+      message: "What is your office number?",
+      name: "office",
+    }
 
   ])
   .then((answers) => {
@@ -44,46 +44,120 @@ inquirer
       answers.email,
       answers.office
     );
+    teamMembers.push(manager);
+    createTeam();
+  });
+
+
+
+
+// function to prompt user for next team member or end task 
+const createTeam = () => {
+  inquirer
+    .prompt(
+      {
+        type: "list",
+        message: "Please select the position of the employee you want to add to your team.",
+        name: "newTeamMember",
+        choices: ["Engineer", "Intern", "finished building team"],
+      }
+    )
+    .then((answer) => {
+      switch (answer.newTeamMember) {
+        case "Engineer":
+          addEngineer();
+        break;
+        case "Intern":
+          addIntern();
+        break;
+        
+        case "finished building team":
+          return function writeToFile() {
+            fs.writeFile("team.html", render(team), (err) => err ? console.log(err) : console.log("Generating Team Profile...")) 
+          };
+            
+      }
+    });
+  }; 
+
+
+
+// function to prompt for engineer properties 
+const addEngineer = () => {
+  inquirer
+    .prompt([
+      {
+      type: "input",
+      message: "What is the engineer's name?",
+      name: "empName",
+      },
+  {
+  type: "input",
+  message: "What is his/her ID number?.",
+  name: "id",
+  },
+  {
+  type: "input",
+  message: "What is his/her email?",
+  name: "email",
+  },
+  {
+  type: "input",
+  message: "What is his/her github profile URL?",
+  name: "github",
   }
 
-// push new Manager to the team members array
-// teamMembers.push(manager);
+  ])
+  .then((answers) => {
+    const engineer = new Engineer(
+      answers.empName,
+      answers.id,
+      answers.email,
+      answers.github
+    );
+    teamMembers.push(engineer);
+    createTeam();
+  });
 
-// at the end of manager function, call a createTeam function
-// this function would simply ask the user which type of employee they would like to add, based on their choice, run the corresponding function
-// const createTeam = () => {
-//   inquirer
-//     .prompt(
-//       {
-//         type: "list",
-//         message: "Please select the position of the employee you want to add to your team.",
-//         name: "newTeamMember",
-//         choices: ["engineer", "intern", "finished building team"],
-//       }
-//     )
-//     .then((answer) => {
-//       switch (answer) {
-//         case "engineer":
-          
-//           break;
-      
-//         case "intern":
+};
 
-//           break;
-        
-//           case "finished building team":
-          
-//             break;
-//       }
-//     });
-  
+// function to prompt for intern properties
+const addIntern = () => {
+  inquirer
+  .prompt([
+  {
+  type: "input",
+  message: "What is the intern's name?",
+  name: "empName",
+  },
+  {
+  type: "input",
+  message: "What is his/her ID number?.",
+  name: "id",
+  },
+  {
+  type: "input",
+  message: "What is his/her email?",
+  name: "email",
+  },
+  {
+  type: "input",
+  message: "What is his/her school name?",
+  name: "school",
+  }
+
+  ])
+  .then((answers) => {
+    const intern = new Intern(
+      answers.empName,
+      answers.id,
+      answers.email,
+      answers.school
+    );
+    teamMembers.push(intern);
+    createTeam();
+  });
+
+};
 
 
-// };
-// createTeam();
-
-// follow the same pattern for each type of employee
-// build a function for them that uses inquirer
-
-
-  )
