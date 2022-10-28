@@ -6,7 +6,7 @@
   
 
   ## Description: 
-  This command-line application.....
+  This command-line application offers a template for quickly designing an HTML page. It features an employee roster theme, allowing the user to create team member cards with individual properties for each.
   &nbsp;
   &nbsp;
 
@@ -25,15 +25,26 @@
   &nbsp;
   ## Installation:
   To install necessary dependencies, run the following command:
-  >            npm install
+  >            npm i
   
 
   &nbsp;
   &nbsp;
   ## Usage:
-  Clone this repo 
+  To create your Team Profile HTML, open your command-line interface and run the following command:
+  >                  node index.js
+  
+
+  Then, answer the questions and view the finished product!
   &nbsp;
   &nbsp;
+
+&nbsp;
+&nbsp;
+Video Walkthrough:
+
+  [![Video walkthrough demonstrating the functionality of the application](./images/team-profile-generator-scrnshot.png)](https://drive.google.com/file/d/1oE74ODgu1b2Sa5wJnaV9Dw9QcFtroE8x/view)
+
 
   &nbsp;
   &nbsp;
