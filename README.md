@@ -32,16 +32,21 @@
   &nbsp;
   ## Usage:
   To create your Team Profile HTML, open your command-line interface and run the following command:
+
   >                  node index.js
   
 
-  Then, answer the questions and view the finished product!
+
+  Answer the questions following the prompts. After you've completed entering information about all team members, select "finished building team" to create a "team.html" file. Your new file will appear in the "dist" folder. Right click on it and select "open in default browser" to view the finished product!
   &nbsp;
   &nbsp;
 
 &nbsp;
 &nbsp;
 Video Walkthrough:
+
+&nbsp;
+&nbsp;
 
   [![Video walkthrough demonstrating the functionality of the application](./images/team-profile-generator-scrnshot.png)](https://drive.google.com/file/d/1oE74ODgu1b2Sa5wJnaV9Dw9QcFtroE8x/view)
 
@@ -56,7 +61,7 @@ Video Walkthrough:
   &nbsp;
 
   ## Contributing:
-  create a fork, push your code, and make a pull request
+  If you would like to contribute to this project, please use a fork to push your code to the repo and make a pull request.
   &nbsp;
   &nbsp;
 
