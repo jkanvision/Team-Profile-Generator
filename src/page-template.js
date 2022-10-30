@@ -85,7 +85,7 @@ const generateTeam = team => {
     };
 
     // use the team array to generate pieces of html based on the employee role
-    const generateHTML = ({empName, id, email, office, github, school});
+    // const generateHTML = ({empName, id, email, office, github, school});
 }
 
 module.exports = team => {

@@ -44,8 +44,8 @@ test("Function getEmail acquires user input", () => {
     expect(x.getEmail()).toBe(testEmail);
 });
 
-test("Function getRole returns \"Employee\"", () => {
+test("Function getRole returns a string", () => {
     const testRole = "driver";
-    const x = new Employee("Gabriel", 5, "awesome@aol.com", testRole);
-    expect(x.getRole()).toBe(testRole);
+    const x = new Employee(getRole(testRole));
+    expect(typeof(x)).toBe("string");
 });

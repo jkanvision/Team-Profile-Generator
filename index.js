@@ -160,6 +160,6 @@ const addIntern = () => {
 };
 
 const writeToFile = () => {
-  fs.writeFile("team.html", render(team), (err) => err ? console.log(err) : console.log("Generating Team Profile...")) 
+  fs.writeFile("team.html", render(teamMembers), (err) => err ? console.log(err) : console.log("Generating Team Profile...")) 
 };
 
