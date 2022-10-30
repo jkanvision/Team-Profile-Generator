@@ -64,100 +64,102 @@ const createTeam = () => {
     )
     .then((answer) => {
       switch (answer.newTeamMember) {
+
         case "Engineer":
           addEngineer();
         break;
+
         case "Intern":
           addIntern();
         break;
-        
+
         case "finished building team":
-          return function writeToFile() {
-            fs.writeFile("team.html", render(team), (err) => err ? console.log(err) : console.log("Generating Team Profile...")) 
-          };
+          writeToFile();
+        break;
             
       }
     });
   }; 
-
-
 
 // function to prompt for engineer properties 
 const addEngineer = () => {
   inquirer
     .prompt([
       {
-      type: "input",
-      message: "What is the engineer's name?",
-      name: "empName",
+        type: "input",
+        message: "What is the engineer's name?",
+        name: "empName",
       },
-  {
-  type: "input",
-  message: "What is his/her ID number?.",
-  name: "id",
-  },
-  {
-  type: "input",
-  message: "What is his/her email?",
-  name: "email",
-  },
-  {
-  type: "input",
-  message: "What is his/her github profile URL?",
-  name: "github",
-  }
+      {
+        type: "input",
+        message: "What is his/her ID number?.",
+        name: "id",
+      },
+      {
+        type: "input",
+        message: "What is his/her email?",
+        name: "email",
+      },
+      {
+        type: "input",
+        message: "What is his/her github profile URL?",
+        name: "github",
+      }
 
-  ])
-  .then((answers) => {
-    const engineer = new Engineer(
-      answers.empName,
-      answers.id,
-      answers.email,
-      answers.github
-    );
-    teamMembers.push(engineer);
-    createTeam();
-  });
+    ])
+    .then((answers) => {
+      const engineer = new Engineer(
+        answers.empName,
+        answers.id,
+        answers.email,
+        answers.github
+      );
+      teamMembers.push(engineer);
+      createTeam();
+    });
 
 };
 
 // function to prompt for intern properties
 const addIntern = () => {
   inquirer
-  .prompt([
-  {
-  type: "input",
-  message: "What is the intern's name?",
-  name: "empName",
-  },
-  {
-  type: "input",
-  message: "What is his/her ID number?.",
-  name: "id",
-  },
-  {
-  type: "input",
-  message: "What is his/her email?",
-  name: "email",
-  },
-  {
-  type: "input",
-  message: "What is his/her school name?",
-  name: "school",
-  }
+    .prompt([
+      {
+        type: "input",
+        message: "What is the intern's name?",
+        name: "empName",
+      },
+      {
+        type: "input",
+        message: "What is his/her ID number?.",
+        name: "id",
+      },
+      {
+        type: "input",
+        message: "What is his/her email?",
+        name: "email",
+      },
+      {
+        type: "input",
+        message: "What is his/her school name?",
+        name: "school",
+      }
 
-  ])
-  .then((answers) => {
-    const intern = new Intern(
-      answers.empName,
-      answers.id,
-      answers.email,
-      answers.school
-    );
-    teamMembers.push(intern);
-    createTeam();
-  });
+    ])
+    .then((answers) => {
+      const intern = new Intern(
+        answers.empName,
+        answers.id,
+        answers.email,
+        answers.school
+      );
+      teamMembers.push(intern);
+      createTeam();
+    });
 
 };
 
+const writeToFile = () => {
+  fs.writeFile("team.html", render(team), (err) => err ? console.log(err) : console.log("Generating Team Profile...")) 
+};
 
