@@ -51,7 +51,7 @@ Video Walkthrough:
 &nbsp;
 &nbsp;
 
-  [![Video walkthrough demonstrating the functionality of the application](./images/team-profile-generator-scrnshot.png)](https://drive.google.com/file/d/1X_uXh12mdWovb62guhBKVK1f2950q0QB/view)
+  [![Video walkthrough demonstrating the functionality of the application](./images/team-profile-generator-scrnshot.png)](https://drive.google.com/file/d/1xt6m6DzZoiuh5zgJa7Jn6xE3byN5Yrj3/view)
 
 
   &nbsp;

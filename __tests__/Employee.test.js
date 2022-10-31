@@ -43,3 +43,4 @@ test("Function getEmail acquires user input", () => {
     const x = new Employee("Cloe", 99, testEmail);
     expect(x.getEmail()).toBe(testEmail);
 });
+
