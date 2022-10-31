@@ -40,7 +40,7 @@
   
 
 
-  Answer the questions following the prompts. After you've completed entering information about all team members, select "finished building team" to create a "team.html" file. Your new file will appear in the "dist" folder. Right click on it and select "open in default browser" to view the finished product!
+  Answer the questions following the prompts. After you've completed entering information about all team members, select "finished building team" to create a "team.html" file. Your new file will appear in the "dist" folder. Right-click on it and select "open in default browser" to view the finished product!
   &nbsp;
   &nbsp;
 
